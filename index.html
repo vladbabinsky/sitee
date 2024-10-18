@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бібліотечний облік</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <h1 class="title">Помічник бібліотекаря</h1>
+            <div class="theme-toggle">
+                <button id="themeBtn">🌙</button>
+            </div>
+        </div>
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'booksTab')">Робота з книгами</button>
+            <button class="tab-button" onclick="openTab(event, 'readersTab')">Робота з читачами</button>
+            <button class="tab-button" onclick="openTab(event, 'cardsTab')">Робота з картками</button>
+            <button class="tab-button" onclick="openTab(event, 'statsTab')">Статистика</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Секція 1: Робота з книгами -->
+        <section id="booksTab" class="tab-content active">
+            <h2>Робота з книгами</h2>
+            <div class="search-section">
+                <input type="text" id="bookSearch" placeholder="Пошук книги...">
+                <button id="searchBookBtn">🔍</button>
+            </div>
+            <button id="addBookBtn">Додати нову книгу</button>
+            <div class="list-container">
+                <h3>Список книг:</h3>
+                <div class="book-grid" id="bookGrid">
+                    <div class="book-card">
+                        <img src="images/NoHeart.png" alt="Безсердечна">
+                        <h3>Безсердечна</h3>
+                        <p>Автор: Марісса Маєр</p>
+                        <p>Кількість: 10</p>
+                        <button class="deleteBookBtn">Видалити</button>
+                    </div>
+                    <div class="book-card">
+                        <img src="images/Zhaga.png" alt="Жага">
+                        <h3>Жага</h3>
+                        <p>Автор: Трейсі Вульф</p>
+                        <p>Кількість: 8</p>
+                        <button class="deleteBookBtn">Видалити</button>
+                    </div>
+                    <div class="book-card">
+                        <img src="images/Opir.png" alt="Опір">
+                        <h3>Опір</h3>
+                        <p>Автор: Трейсі Вульф</p>
+                        <p>Кількість: 12</p>
+                        <button class="deleteBookBtn">Видалити</button>
+                    </div>
+                    <div class="book-card">
+                        <img src="images/Dune.png" alt="Дюна">
+                        <h3>Дюна</h3>
+                        <p>Автор: Френк Герберт</p>
+                        <p>Кількість: 5</p>
+                        <button class="deleteBookBtn">Видалити</button>
+                    </div>
+                    <div class="book-card">
+                        <img src="images/BladeRunner.png" alt="Той, хто біжить по лезу">
+                        <h3>Той, хто біжить по лезу</h3>
+                        <p>Автор: Філіп К. Дік</p>
+                        <p>Кількість: 7</p>
+                        <button class="deleteBookBtn">Видалити</button>
+                    </div>
+                    <div class="book-card">
+                        <img src="images/Fahrenheit451.png" alt="451° за Фаренгейтом">
+                        <h3>451° за Фаренгейтом</h3>
+                        <p>Автор: Рей Бредбері</p>
+                        <p>Кількість: 6</p>
+                        <button class="deleteBookBtn">Видалити</button>
+                    </div>
+                    <div class="book-card">
+                        <img src="images/HarryPotter1.png" alt="Гаррі Поттер і філософський камінь">
+                        <h3>Гаррі Поттер і філософський камінь</h3>
+                        <p>Автор: Джоан Роулінг</p>
+                        <p>Кількість: 10</p>
+                        <button class="deleteBookBtn">Видалити</button>
+                    </div>
+                    <div class="book-card">
+                        <img src="images/OldManAndSea.png" alt="Старий і море">
+                        <h3>Старий і море</h3>
+                        <p>Автор: Ернест Хемінгуей</p>
+                        <p>Кількість: 4</p>
+                        <button class="deleteBookBtn">Видалити</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="readersTab" class="tab-content">
+            <h2>Робота з читачами</h2>
+            <div class="search-section">
+                <input type="text" id="readerSearch" placeholder="Пошук читача...">
+                <button id="searchReaderBtn">🔍</button>
+            </div>
+            <button id="addReaderBtn">Додати нового читача</button>
+            <div class="list-container">
+                <h3>Список читачів:</h3>
+                <div class="reader-grid" id="readerGrid">
+                    <div class="reader-card">
+                        <img src="images/human.png" alt="Читач" class="reader-image">
+                        <h3>Іван Петров</h3>
+                        <p>Адреса: вул. Шевченка, 10</p>
+                        <p>Телефон: +380123456789</p>
+                        <button class="deleteReaderBtn">Видалити</button>
+                    </div>
+                    <div class="reader-card">
+                        <img src="images/human.png" alt="Читач" class="reader-image">
+                        <h3>Марія Іванова</h3>
+                        <p>Адреса: вул. Лесі Українки, 12</p>
+                        <p>Телефон: +380987654321</p>
+                        <button class="deleteReaderBtn">Видалити</button>
+                    </div>
+                    <div class="reader-card">
+                        <img src="images/human.png" alt="Читач" class="reader-image">
+                        <h3>Олег Сидоров</h3>
+                        <p>Адреса: вул. Сагайдачного, 8</p>
+                        <p>Телефон: +380444332211</p>
+                        <button class="deleteReaderBtn">Видалити</button>
+                    </div>
+                    <div class="reader-card">
+                        <img src="images/human.png" alt="Читач" class="reader-image">
+                        <h3>Катерина Федорова</h3>
+                        <p>Адреса: вул. Драгоманова, 3</p>
+                        <p>Телефон: +380555666777</p>
+                        <button class="deleteReaderBtn">Видалити</button>
+                    </div>
+                    <div class="reader-card">
+                        <img src="images/human.png" alt="Читач" class="reader-image">
+                        <h3>Олексій Коваленко</h3>
+                        <p>Адреса: вул. Хрещатик, 15</p>
+                        <p>Телефон: +380888999000</p>
+                        <button class="deleteReaderBtn">Видалити</button>
+                    </div>
+                    <div class="reader-card">
+                        <img src="images/human.png" alt="Читач" class="reader-image">
+                        <h3>Анастасія Ткаченко</h3>
+                        <p>Адреса: вул. Саксаганського, 7</p>
+                        <p>Телефон: +380666777888</p>
+                        <button class="deleteReaderBtn">Видалити</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секція 3: Робота з картками -->
+        <section id="cardsTab" class="tab-content">
+            <h2>Робота з картками</h2>
+            <div class="search-section">
+                <input type="text" id="cardSearch" placeholder="Пошук картки...">
+                <button id="searchCardBtn">🔍</button>
+            </div>  
+            <button id="saveCardBtn">Додати картку</button>
+            <div class="list-container">
+                <h3>Список карток:</h3>
+                <div class="card-grid" id="cardGrid">
+                    <div class="card-item">
+                        <img src="images/olexandr.jpg" alt="Читач Олександр" class="card-image">
+                        <div class="card-details">
+                            <p class="reader-name">Читач: Олександр</p>
+                            <img src="images/NoHeart.png" alt="Книга: Безсердечна" class="book-image">
+                            <p class="book-title">Книга: Безсердечна</p>
+                            <p>Дата видачі: <span>14.10.2024</span></p>
+                            <p>Дата повернення: <span>14.11.2024</span></p>
+                            <button class="deleteCardBtn">Видалити</button>
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <img src="images/maria.jpg" alt="Читач Марія" class="card-image">
+                        <div class="card-details">
+                            <p class="reader-name">Читач: Марія</p>
+                            <img src="images/Zhaga.png" alt="Книга: Жага" class="book-image">
+                            <p class="book-title">Книга: Жага</p>
+                            <p>Дата видачі: <span>14.10.2024</span></p>
+                            <p>Дата повернення: <span>14.11.2024</span></p>
+                            <button class="deleteCardBtn">Видалити</button>
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <img src="images/ivan.jpg" alt="Читач Іван" class="card-image">
+                        <div class="card-details">
+                            <p class="reader-name">Читач: Іван</p>
+                            <img src="images/Opir.png" alt="Книга: Опір" class="book-image">
+                            <p class="book-title">Книга: Опір</p>
+                            <p>Дата видачі: <span>14.10.2024</span></p>
+                            <p>Дата повернення: <span>14.11.2024</span></p>
+                            <button class="deleteCardBtn">Видалити</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секція 4: Статистика -->
+        <section id="statsTab" class="tab-content">
+            <h2>Статистика</h2>
+            <img src="images/makaka.jpg" alt="Makaka" class="Makaka">
+            <h2>Тут буде статистика бібліотеки. (Функція ще не реалізована) =(</h2>
+        </section>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
